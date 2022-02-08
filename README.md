@@ -35,3 +35,9 @@ Copia de Seguridad
 | Restaurar desde archivo .sql | #psql -U username -d database_name -f nombre_archivo.sql|
 | restaurar desde archivo .tar con Log de suceso | #pg_restore -d Nombre_BD -U postgres -p 5433 -Ft -v nombre_archivo.tar > logsucesos.txt 2>&1  |
 
+Manipulación de Estructura
+---------------------------
+| Descripcion                | Comando                                |
+| -------------------------- | -------------------------------------- |
+| Crear base de datos|  CREATE DATABASE Nombre_BD  WITH OWNER = postgres template = template0 ENCODING = 'UTF8'  <br>TABLESPACE = pg_default LC_COLLATE = 'es_ES.UTF-8' LC_CTYPE = 'es_ES.UTF-8'  CONNECTION LIMIT = -1;  |
+| Modificar el tipo de datos de una columna| ALTER  TABLE faccom_factura  ALTER COLUMN modificacion_idusuario TYPE integer   USING  modificacion_idusuario::integer;  |
